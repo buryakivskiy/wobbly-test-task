@@ -1,12 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import * as bcrypt from 'bcrypt';
-import { UserService } from 'src/user/user.service';
-import { IUserEntity } from 'src/user/interfaces/user-entity.interface';
 import { JwtService } from '@nestjs/jwt';
-import { ISignInResult } from '../interfaces/sign-in-result.interface';
-import { PasswordService } from './password.service';
+import { Injectable } from '@nestjs/common';
 import { AuthError } from '../errors/auth.error';
+import { PasswordService } from './password.service';
+import { UserService } from 'src/user/services/user.service';
+import { ISignInResult } from '../interfaces/sign-in-result.interface';
 import { ISignUpResult } from '../interfaces/sign-up-result.interface';
+import { IUserEntity } from 'src/user/interfaces/user-entity.interface';
 
 @Injectable()
 export class AuthService {

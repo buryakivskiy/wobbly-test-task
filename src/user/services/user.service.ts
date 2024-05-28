@@ -1,9 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { UserError } from './errors/user.error';
-import { USER_CONSTANTS } from './user.constants';
-import { ICreateUser } from './interfaces/create-user.interface';
-import { IUserEntity } from './interfaces/user-entity.interface';
-import { IUserRepository } from './interfaces/user-repository.interface';
+import { UserError } from '../errors/user.error';
+import { USER_CONSTANTS } from '../user.constants';
+import { ICreateUser } from '../interfaces/create-user.interface';
+import { IUserEntity } from '../interfaces/user-entity.interface';
+import { IUserRepository } from '../interfaces/user-repository.interface';
 
 @Injectable()
 export class UserService {

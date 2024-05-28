@@ -2,8 +2,8 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './services/auth.service';
 import { SignUpSchema } from './schemas/sign-up.schema';
-import { SignUpResponse } from './responses/sign-up.response';
 import { SignInSchema } from './schemas/sign-in.schema';
+import { SignUpResponse } from './responses/sign-up.response';
 import { SignInResponse } from './responses/sign-in.response';
 
 @ApiTags('Auth')

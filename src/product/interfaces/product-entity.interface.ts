@@ -1,4 +1,4 @@
-import { IUserEntity } from "src/user/interfaces/user-entity.interface";
+import { IUserEntity } from 'src/user/interfaces/user-entity.interface';
 
 export interface IProductEntity {
   readonly id: number;

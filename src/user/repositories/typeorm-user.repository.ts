@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ICreateUser } from './interfaces/create-user.interface';
-import { IUserEntity } from './interfaces/user-entity.interface';
-import { TypeormUserEntity } from './entities/typeorm-user.entity';
-import { IUserRepository } from './interfaces/user-repository.interface';
+import { ICreateUser } from '../interfaces/create-user.interface';
+import { IUserEntity } from '../interfaces/user-entity.interface';
+import { TypeormUserEntity } from '../entities/typeorm-user.entity';
+import { IUserRepository } from '../interfaces/user-repository.interface';
 
 @Injectable()
 export class TypeormUserRepository implements IUserRepository {

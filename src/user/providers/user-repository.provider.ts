@@ -1,6 +1,6 @@
 import { Provider } from '@nestjs/common';
 import { USER_CONSTANTS } from '../user.constants';
-import { TypeormUserRepository } from '../typeorm-user.repository';
+import { TypeormUserRepository } from '../repositories/typeorm-user.repository';
 
 export const UserRepositoryProvider: Provider = {
   useClass: TypeormUserRepository,

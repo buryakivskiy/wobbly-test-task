@@ -1,10 +1,12 @@
 import { Body, Controller, Post } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './services/auth.service';
 import { SignUpSchema } from './schemas/sign-up.schema';
 import { SignUpResponse } from './responses/sign-up.response';
 import { SignInSchema } from './schemas/sign-in.schema';
 import { SignInResponse } from './responses/sign-in.response';
 
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -12,6 +14,8 @@ export class AuthController {
   ) {}
 
   @Post('signUp')
+  @ApiOkResponse({ type: SignUpResponse })
+  @ApiOperation({ description: 'Register new user' })
   public async signUp(
     @Body() schema: SignUpSchema,
   ): Promise<SignUpResponse> {
@@ -21,6 +25,8 @@ export class AuthController {
   }
 
   @Post('signIn')
+  @ApiOkResponse({ type: SignInResponse })
+  @ApiOperation({ description: 'Authorize user' })
   public async signIn(
     @Body() schema: SignInSchema,
   ): Promise<SignInResponse> {

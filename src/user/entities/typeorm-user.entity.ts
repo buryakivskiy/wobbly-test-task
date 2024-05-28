@@ -1,14 +1,16 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { USER_CONSTANTS } from '../user.constants';
+import { IUserEntity } from '../interfaces/user-entity.interface';
 
 @Entity('User')
-export class UserEntity {
+export class TypeormUserEntity implements IUserEntity {
   @PrimaryGeneratedColumn()
   public readonly id: number;
 
   @Column({
     unique: true,
     type: 'varchar',
-    length: 100,
+    length: USER_CONSTANTS.DOMAIN.ENTITY.EMAIL.MAX_LENGTH,
   })
   public email: string;
 

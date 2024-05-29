@@ -27,7 +27,7 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
       ssl: true,
       extra: {
         ssl: {
-          rejectUnauthorized: true,
+          rejectUnauthorized: false,
         }
       },
       type: 'postgres',
@@ -48,7 +48,7 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
       ssl: true,
       extra: {
         ssl: {
-          rejectUnauthorized: true,
+          rejectUnauthorized: false,
         }
       },
       type: 'postgres',
@@ -68,7 +68,7 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
       ssl: true,
       extra: {
         ssl: {
-          rejectUnauthorized: true,
+          rejectUnauthorized: false,
         }
       },
       dropSchema: true,

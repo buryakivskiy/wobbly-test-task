@@ -7,8 +7,8 @@ export const TypeOrmDataSource = new DataSource({
   ssl: true,
   extra: {
     ssl: {
-      rejectUnauthorized: true,
-    }
+      rejectUnauthorized: false,
+    },
   },
   type: 'postgres',
   host: process.env.DATABASE_HOST,

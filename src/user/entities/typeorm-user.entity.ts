@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { USER_CONSTANTS } from '../user.constants';
 import { IUserEntity } from '../interfaces/user-entity.interface';
-import { TypeormProductEntity } from 'src/product/entities/typeorm-product.entity';
+import { TypeormProductEntity } from '../../product/entities/typeorm-product.entity';
 
 @Entity('User')
 export class TypeormUserEntity implements IUserEntity {

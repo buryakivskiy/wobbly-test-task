@@ -7,5 +7,7 @@ export interface ICreateProduct {
 
     readonly category: string;
 
+    readonly price: number;
+
     readonly user: IUserEntity;
 }

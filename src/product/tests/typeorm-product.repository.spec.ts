@@ -1,14 +1,14 @@
+import { getRepositoryToken } from '@nestjs/typeorm';
+import { Test, TestingModule } from '@nestjs/testing';
 import { Repository } from 'typeorm';
 import * as crypto from 'node:crypto';
-import { IProductRepository } from '../interfaces/product-repository.interface';
-import { PRODUCT_CONSTANTS } from '../product.constants';
 import { MockType } from './types/mock.type';
-import { TypeormProductEntity } from '../entities/typeorm-product.entity';
-import { Test, TestingModule } from '@nestjs/testing';
-import { TypeormProductRepository } from '../repositories/typeorm-product.repository';
-import { getRepositoryToken } from '@nestjs/typeorm';
-import { generateRandomProduct } from './utils/generate-random-product.util';
+import { PRODUCT_CONSTANTS } from '../product.constants';
 import { ICreateProduct } from '../interfaces/create-product.interface';
+import { TypeormProductEntity } from '../entities/typeorm-product.entity';
+import { generateRandomProduct } from './utils/generate-random-product.util';
+import { IProductRepository } from '../interfaces/product-repository.interface';
+import { TypeormProductRepository } from '../repositories/typeorm-product.repository';
 
 describe('TypeormProductRepository', () => {
     let repository: IProductRepository;

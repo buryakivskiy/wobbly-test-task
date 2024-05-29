@@ -1,15 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import * as crypto from 'node:crypto';
-import { UserService } from '../../user/services/user.service';
-import { IProductRepository } from '../interfaces/product-repository.interface';
-import { ProductService } from '../services/product.service';
+import { ProductError } from '../errors/product.error';
 import { PRODUCT_CONSTANTS } from '../product.constants';
+import { ProductService } from '../services/product.service';
+import { UserService } from '../../user/services/user.service';
 import { ICreateProduct } from '../interfaces/create-product.interface';
-import { generateRandomUser } from '../../user/tests/utils/generate-random-user.util';
-import { generateRandomProduct } from './utils/generate-random-product.util';
 import { IUpdateProduct } from '../interfaces/update-product.interface';
 import { IProductEntity } from '../interfaces/product-entity.interface';
-import { ProductError } from '../errors/product.error';
+import { generateRandomProduct } from './utils/generate-random-product.util';
+import { IProductRepository } from '../interfaces/product-repository.interface';
+import { generateRandomUser } from '../../user/tests/utils/generate-random-user.util';
+
 
 describe('ProductService', () => {
     let service: ProductService;

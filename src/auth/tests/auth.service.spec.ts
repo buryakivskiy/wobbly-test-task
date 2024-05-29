@@ -1,11 +1,11 @@
 import { JwtService } from '@nestjs/jwt';
 import { TestingModule, Test } from '@nestjs/testing';
 import * as crypto from 'node:crypto';
+import { AuthError } from '../errors/auth.error';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../../user/services/user.service';
 import { PasswordService } from '../services/password.service';
 import { generateRandomUser } from '../../user/tests/utils/generate-random-user.util';
-import { AuthError } from '../errors/auth.error';
 
 describe('AuthService', () => {
     let service: AuthService;

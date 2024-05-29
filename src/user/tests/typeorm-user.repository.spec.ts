@@ -1,14 +1,14 @@
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { Test, TestingModule } from '@nestjs/testing';
+import { Repository } from 'typeorm';
 import * as crypto from 'node:crypto';
-import { IUserRepository } from '../interfaces/user-repository.interface';
 import { USER_CONSTANTS } from '../user.constants';
 import { MockType } from 'src/product/tests/types/mock.type';
-import { Repository } from 'typeorm';
-import { TypeormUserEntity } from '../entities/typeorm-user.entity';
-import { Test, TestingModule } from '@nestjs/testing';
-import { TypeormUserRepository } from '../repositories/typeorm-user.repository';
-import { generateRandomUser } from './utils/generate-random-user.util';
 import { ICreateUser } from '../interfaces/create-user.interface';
+import { TypeormUserEntity } from '../entities/typeorm-user.entity';
+import { generateRandomUser } from './utils/generate-random-user.util';
+import { IUserRepository } from '../interfaces/user-repository.interface';
+import { TypeormUserRepository } from '../repositories/typeorm-user.repository';
 
 describe('TypeormUserRepository', () => {
     let repository: IUserRepository;

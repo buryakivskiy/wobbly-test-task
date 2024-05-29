@@ -1,10 +1,11 @@
 import { TestingModule, Test } from '@nestjs/testing';
-import { UserService } from '../services/user.service';
-import { USER_CONSTANTS } from '../user.constants';
-import { IUserRepository } from '../interfaces/user-repository.interface';
-import { generateRandomUser } from './utils/generate-random-user.util';
-import { ICreateUser } from '../interfaces/create-user.interface';
 import { UserError } from '../errors/user.error';
+import { USER_CONSTANTS } from '../user.constants';
+import { UserService } from '../services/user.service';
+import { ICreateUser } from '../interfaces/create-user.interface';
+import { generateRandomUser } from './utils/generate-random-user.util';
+import { IUserRepository } from '../interfaces/user-repository.interface';
+
 
 describe('UserService', () => {
     let service: UserService;

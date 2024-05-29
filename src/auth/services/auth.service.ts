@@ -10,9 +10,9 @@ import { IUserEntity } from '../../user/interfaces/user-entity.interface';
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly passwordService: PasswordService,
-    private readonly userService: UserService,
     private readonly jwtService: JwtService,
+    private readonly userService: UserService,
+    private readonly passwordService: PasswordService,
   ) {}
 
   public async signIn(email: string, password: string): Promise<ISignInResult> {

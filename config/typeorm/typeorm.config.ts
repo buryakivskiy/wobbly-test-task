@@ -24,6 +24,12 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
 
   public production(): TypeOrmModuleOptions {
     return {
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: true,
+        }
+      },
       type: 'postgres',
       synchronize: false,
       migrationsRun: true,
@@ -39,6 +45,12 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
 
   public development(): TypeOrmModuleOptions {
     return {
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: true,
+        }
+      },
       type: 'postgres',
       migrationsRun: false,
       autoLoadEntities: true,
@@ -53,6 +65,12 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
 
   public test(): TypeOrmModuleOptions {
     return {
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: true,
+        }
+      },
       dropSchema: true,
       type: 'postgres',
       migrationsRun: true,

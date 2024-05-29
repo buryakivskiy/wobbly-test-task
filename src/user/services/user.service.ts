@@ -21,23 +21,19 @@ export class UserService {
   }
 
   public async create(payload: ICreateUser): Promise<IUserEntity> {
-    try {
-        const emailExists = await this.userRepository.existsByEmail(
-            payload.email,
-        );
-  
-        if (emailExists) {
-            throw UserError.EmailAlreadyTaken();
-        }
+    const emailExists = await this.userRepository.existsByEmail(
+      payload.email,
+    );
 
-        const user = await this.userRepository.create({
-            email: payload.email,
-            passwordHash: payload.passwordHash,
-        });
-
-        return user;
-    } catch (error) {
-        throw error;
+    if (emailExists) {
+      throw UserError.EmailAlreadyTaken();
     }
+
+    const user = await this.userRepository.create({
+      email: payload.email,
+      passwordHash: payload.passwordHash,
+    });
+
+    return user;
   }
 }

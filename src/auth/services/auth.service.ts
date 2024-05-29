@@ -2,10 +2,10 @@ import { JwtService } from '@nestjs/jwt';
 import { Injectable } from '@nestjs/common';
 import { AuthError } from '../errors/auth.error';
 import { PasswordService } from './password.service';
-import { UserService } from 'src/user/services/user.service';
+import { UserService } from '../../user/services/user.service';
 import { ISignInResult } from '../interfaces/sign-in-result.interface';
 import { ISignUpResult } from '../interfaces/sign-up-result.interface';
-import { IUserEntity } from 'src/user/interfaces/user-entity.interface';
+import { IUserEntity } from '../../user/interfaces/user-entity.interface';
 
 @Injectable()
 export class AuthService {
@@ -22,7 +22,7 @@ export class AuthService {
       throw AuthError.InvalidCredentials();
     }
 
-    const passwordValid = this.passwordService.validatePassword(password, user.passwordHash);
+    const passwordValid = await this.passwordService.validatePassword(password, user.passwordHash);
 
     if (!passwordValid) {
       throw AuthError.InvalidCredentials();
@@ -37,9 +37,11 @@ export class AuthService {
   }
 
   public async signUp(email: string, password: string): Promise<ISignUpResult> {
+    const hashedPassword = await this.passwordService.hashPassword(password);
+
     const user = await this.userService.create({
       email,
-      passwordHash: await this.passwordService.hashPassword(password)
+      passwordHash: hashedPassword,
     });
 
     return {

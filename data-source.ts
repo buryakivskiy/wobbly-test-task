@@ -4,12 +4,12 @@ import { config } from 'dotenv';
 config();
 
 export const TypeOrmDataSource = new DataSource({
-  ssl: true,
+  /* ssl: true,
   extra: {
     ssl: {
       rejectUnauthorized: false,
     },
-  },
+  }, */
   type: 'postgres',
   host: process.env.DATABASE_HOST,
   port: Number(process.env.DATABASE_PORT),
